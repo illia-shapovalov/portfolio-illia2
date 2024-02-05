@@ -1,6 +1,9 @@
-Thanks for downloading this template!
+portfolio:
 
-Template Name: iPortfolio
-Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Clara ok
+Omnivox ok 
+Journnee Verte ok
+Jeremyrun okok
+TAcademy client okokok
+TAcademy manager okokok
+Portfolio (this)
