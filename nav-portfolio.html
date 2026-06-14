@@ -1,6 +1,6 @@
 <div class="profile">
   <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-  <h1 class="text-light"><a href="index.html">Illia Shapovalov</a></h1>
+  <h1 class="text-light"><a href="index-en.html">Illia Shapovalov</a></h1>
   <div class="social-links mt-3 text-center">
     <a href="https://github.com/illia-shapovalov" class="github"><i class="bx bxl-github"></i></a>
     <a href="https://www.linkedin.com/in/illia-shapovalov-49387b1ab/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
@@ -9,55 +9,20 @@
 
 <nav id="navbar" class="nav-menu navbar">
   <ul>
-    <li><a href="index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-    <li><a href="index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-    <li><a href="index.html#skills" class="nav-link scrollto"><i class="bx bx-code"></i> <span>Skills</span></a></li>
-    <li><a href="index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-    <li><a href="index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-    <li><a href="index.html#services" class="nav-link scrollto"><i class="bx bx-diamond"></i> <span>Services</span></a></li>
-    <li><a href="index.html#testimonials" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Testimonials</span></a></li>
-    <li><a href="index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <i class="bx bx-globe"></i> <span>Language</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-      <li><a class="dropdown-item" id="language-link-fr" href="index.html">Français</a></li>
-      <li><a class="dropdown-item" id="language-link-en" href="index-en.html">English</a></li>
-    </ul>
-</li>
-</ul>
+    <li><a href="index-en.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+    <li><a href="index-en.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+    <li><a href="index-en.html#skills" class="nav-link scrollto"><i class="bx bx-code"></i> <span>Skills</span></a></li>
+    <li><a href="index-en.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+    <li><a href="index-en.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+    <li><a href="index-en.html#services" class="nav-link scrollto"><i class="bx bx-diamond"></i> <span>Services</span></a></li>
+    <li><a href="index-en.html#testimonials" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Testimonials</span></a></li>
+    <li><a href="index-en.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+    <li class="nav-language px-3 mt-3">
+      <label class="text-light mb-1" for="language-select"><i class="bx bx-globe"></i> Language</label>
+      <select class="form-select form-select-sm" id="language-select" aria-label="Language" onchange="if(this.value==='fr'){var p=window.location.pathname.split('/').pop()||'index-en.html'; window.location.href=(p==='index-en.html'||p==='index.html')?'index.html':p.replace(/\.html$/,'-fr.html');}">
+        <option value="en" selected>English</option>
+        <option value="fr">Français</option>
+      </select>
+    </li>
+  </ul>
 </nav>
-
-<script>
-(function () {
-    var page = window.location.pathname.split('/').pop();
-
-    if (!page || page === '') {
-        page = 'index.html';
-    }
-
-    var enPage;
-    var frPage;
-
-    if (page === 'index.html') {
-        frPage = 'index.html';
-        enPage = 'index-en.html';
-    }
-    else if (page === 'index-en.html') {
-        frPage = 'index.html';
-        enPage = 'index-en.html';
-    }
-    else if (page.endsWith('-fr.html')) {
-        frPage = page;
-        enPage = page.replace('-fr.html', '.html');
-    }
-    else {
-        frPage = page.replace('.html', '-fr.html');
-        enPage = page;
-    }
-
-    document.getElementById('language-link-fr').href = frPage;
-    document.getElementById('language-link-en').href = enPage;
-})();
-</script>
