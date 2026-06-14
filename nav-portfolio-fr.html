@@ -1,0 +1,40 @@
+<div class="profile">
+  <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
+  <h1 class="text-light"><a href="index-fr.html">Illia Shapovalov</a></h1>
+  <div class="social-links mt-3 text-center">
+    <a href="https://github.com/illia-shapovalov" class="github"><i class="bx bxl-github"></i></a>
+    <a href="https://www.linkedin.com/in/illia-shapovalov-49387b1ab/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+  </div>
+</div>
+
+<nav id="navbar" class="nav-menu navbar">
+  <ul>
+    <li><a href="index-fr.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Accueil</span></a></li>
+    <li><a href="index-fr.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>À propos</span></a></li>
+    <li><a href="index-fr.html#skills" class="nav-link scrollto"><i class="bx bx-code"></i> <span>Compétences</span></a></li>
+    <li><a href="index-fr.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Parcours</span></a></li>
+    <li><a href="index-fr.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+    <li><a href="index-fr.html#services" class="nav-link scrollto"><i class="bx bx-diamond"></i> <span>Services</span></a></li>
+    <li><a href="index-fr.html#testimonials" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Témoignages</span></a></li>
+    <li><a href="index-fr.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-globe"></i> <span>Langue</span></a>
+      <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+        <li><a class="dropdown-item" id="language-link-en" href="index.html">English</a></li>
+        <li><a class="dropdown-item" id="language-link-fr" href="index-fr.html">Français</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<script>
+(function() {
+  var page = window.location.pathname.split('/').pop() || 'index.html';
+  var isFr = page.endsWith('-fr.html');
+  var enPage = isFr ? page.replace('-fr.html', '.html') : page;
+  var frPage = isFr ? page : page.replace('.html', '-fr.html');
+  var en = document.getElementById('language-link-en');
+  var fr = document.getElementById('language-link-fr');
+  if (en) en.setAttribute('href', enPage || 'index.html');
+  if (fr) fr.setAttribute('href', frPage || 'index-fr.html');
+})();
+</script>
