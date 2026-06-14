@@ -18,23 +18,46 @@
     <li><a href="index-fr.html#testimonials" class="nav-link scrollto"><i class="bx bx-smile"></i> <span>Témoignages</span></a></li>
     <li><a href="index-fr.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
     <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bx bx-globe"></i> <span>Langue</span></a>
-      <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-        <li><a class="dropdown-item" id="language-link-en" href="index.html">English</a></li>
-        <li><a class="dropdown-item" id="language-link-fr" href="index-fr.html">Français</a></li>
-      </ul>
+    <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="bx bx-globe"></i> <span>Language</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+      <li><a class="dropdown-item" id="language-link-fr" href="index.html">Français</a></li>
+      <li><a class="dropdown-item" id="language-link-en" href="index-en.html">English</a></li>
+    </ul>
     </li>
   </ul>
 </nav>
+
 <script>
-(function() {
-  var page = window.location.pathname.split('/').pop() || 'index.html';
-  var isFr = page.endsWith('-fr.html');
-  var enPage = isFr ? page.replace('-fr.html', '.html') : page;
-  var frPage = isFr ? page : page.replace('.html', '-fr.html');
-  var en = document.getElementById('language-link-en');
-  var fr = document.getElementById('language-link-fr');
-  if (en) en.setAttribute('href', enPage || 'index.html');
-  if (fr) fr.setAttribute('href', frPage || 'index-fr.html');
+(function () {
+    var page = window.location.pathname.split('/').pop();
+
+    if (!page || page === '') {
+        page = 'index.html';
+    }
+
+    var enPage;
+    var frPage;
+
+    if (page === 'index.html') {
+        frPage = 'index.html';
+        enPage = 'index-en.html';
+    }
+    else if (page === 'index-en.html') {
+        frPage = 'index.html';
+        enPage = 'index-en.html';
+    }
+    else if (page.endsWith('-fr.html')) {
+        frPage = page;
+        enPage = page.replace('-fr.html', '.html');
+    }
+    else {
+        frPage = page.replace('.html', '-fr.html');
+        enPage = page;
+    }
+
+    document.getElementById('language-link-fr').href = frPage;
+    document.getElementById('language-link-en').href = enPage;
 })();
 </script>
